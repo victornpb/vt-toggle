@@ -1,0 +1,36 @@
+{
+  "name": "vt-toggle",
+  "version": "1.0.0",
+  "description": "Turn HTML checkbox inputs into fancy toggle switches with just a CSS class",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victornpb/vt-toggle.git"
+  },
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/"
+  },
+  "keywords": [
+    "toggle",
+    "switch",
+    "checkbox",
+    "input",
+    "ios",
+    "html",
+    "css",
+    "sass",
+    "scss"
+  ],
+  "author": {
+    "name": "Victor Nunes",
+    "email": "vitimus@gmail.com",
+    "web": "http://vitim.us"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/victornpb/vt-toggle/issues"
+  },
+  "homepage": "https://github.com/victornpb/vt-toggle#readme",
+  "dependencies": {
+    "node-sass": "^4.5.3"
+  }
+}
