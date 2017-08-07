@@ -1,56 +1,303 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>vt-toggle css checkbox by Victornpb</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Turn checkboxes into fancy toggle switches">
+	<meta name="author" content="Victor Nunes">
+	<title>vt-toggle · Turn checkboxes into fancy toggle switches</title>
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+	<!-- <link href="css/highlight.css" rel="stylesheet"> -->
+	<!-- <link href="https://unpkg.com/vt-toggle/dist/css/bootstrap3/vt-toggle.css" rel="stylesheet"> -->
+	<!-- <link href="https://getbootstrap.com/assets/css/docs.min.css" rel="stylesheet"> -->
+	<!-- <link href="css/main.css" rel="stylesheet"> -->
 	<link rel="stylesheet" type="text/css" href="css/vt-toggle.css">
+
 	<style>
-		body{
-			font-family: "Helvetica Neue", Arial, sans-serif;
+		/*! CSS Used from: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css */
+		html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+		body{margin:0;}
+		footer,header,main,nav{display:block;}
+		a{background-color:transparent;}
+		a:active,a:hover{outline:0;}
+		h1{margin:.67em 0;font-size:2em;}
+		img{border:0;}
+		hr{height:0;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;}
+		pre{overflow:auto;}
+		code,pre{font-family:monospace,monospace;font-size:1em;}
+		button,input{margin:0;font:inherit;color:inherit;}
+		button{overflow:visible;}
+		button{text-transform:none;}
+		button{-webkit-appearance:button;cursor:pointer;}
+		html input[disabled]{cursor:default;}
+		button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0;}
+		input{line-height:normal;}
+		input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;}
+		@media print{
+		*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important;}
+		a,a:visited{text-decoration:underline;}
+		a[href]:after{content:" (" attr(href) ")";}
+		pre{border:1px solid #999;page-break-inside:avoid;}
+		img{page-break-inside:avoid;}
+		img{max-width:100%!important;}
+		h2,p{orphans:3;widows:3;}
+		h2{page-break-after:avoid;}
+		.navbar{display:none;}
 		}
+		*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+		:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+		html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+		body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff;}
+		button,input{font-family:inherit;font-size:inherit;line-height:inherit;}
+		a{color:#337ab7;text-decoration:none;}
+		a:focus,a:hover{color:#23527c;text-decoration:underline;}
+		a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+		img{vertical-align:middle;}
+		hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee;}
+		.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+		h1,h2,h4{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;}
+		h1,h2{margin-top:20px;margin-bottom:10px;}
+		h4{margin-top:10px;margin-bottom:10px;}
+		h1{font-size:36px;}
+		h2{font-size:30px;}
+		h4{font-size:18px;}
+		p{margin:0 0 10px;}
+		.lead{margin-bottom:20px;font-size:16px;font-weight:300;line-height:1.4;}
+		@media (min-width:768px){
+		.lead{font-size:21px;}
+		}
+		.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee;}
+		ul{margin-top:0;margin-bottom:10px;}
+		code,pre{font-family:Menlo,Monaco,Consolas,"Courier New",monospace;}
+		code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;border-radius:4px;}
+		pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px;}
+		pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0;}
+		.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;}
+		@media (min-width:768px){
+		.container{width:750px;}
+		}
+		@media (min-width:992px){
+		.container{width:970px;}
+		}
+		@media (min-width:1200px){
+		.container{width:1170px;}
+		}
+		label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:700;}
+		input[type=checkbox],input[type=radio]{margin:4px 0 0;margin-top:1px\9;line-height:normal;}
+		input[type=checkbox]:focus,input[type=radio]:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+		input[type=checkbox][disabled]{cursor:not-allowed;}
+		.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px;}
+		.btn:active:focus,.btn:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+		.btn:focus,.btn:hover{color:#333;text-decoration:none;}
+		.btn:active{background-image:none;outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125);}
+		.btn-lg{padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px;}
+		.collapse{display:none;}
+		.nav{padding-left:0;margin-bottom:0;list-style:none;}
+		.nav>li{position:relative;display:block;}
+		.nav>li>a{position:relative;display:block;padding:10px 15px;}
+		.nav>li>a:focus,.nav>li>a:hover{text-decoration:none;background-color:#eee;}
+		.navbar{position:relative;min-height:50px;margin-bottom:20px;border:1px solid transparent;}
+		@media (min-width:768px){
+		.navbar{border-radius:4px;}
+		}
+		@media (min-width:768px){
+		.navbar-header{float:left;}
+		}
+		.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1);}
+		@media (min-width:768px){
+		.navbar-collapse{width:auto;border-top:0;-webkit-box-shadow:none;box-shadow:none;}
+		.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important;}
+		.navbar-static-top .navbar-collapse{padding-right:0;padding-left:0;}
+		}
+		.container>.navbar-collapse,.container>.navbar-header{margin-right:-15px;margin-left:-15px;}
+		@media (min-width:768px){
+		.container>.navbar-collapse,.container>.navbar-header{margin-right:0;margin-left:0;}
+		}
+		.navbar-static-top{z-index:1000;border-width:0 0 1px;}
+		@media (min-width:768px){
+		.navbar-static-top{border-radius:0;}
+		}
+		.navbar-brand{float:left;height:50px;padding:15px 15px;font-size:18px;line-height:20px;}
+		.navbar-brand:focus,.navbar-brand:hover{text-decoration:none;}
+		@media (min-width:768px){
+		.navbar>.container .navbar-brand{margin-left:-15px;}
+		}
+		.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px;}
+		.navbar-toggle:focus{outline:0;}
+		.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px;}
+		.navbar-toggle .icon-bar+.icon-bar{margin-top:4px;}
+		@media (min-width:768px){
+		.navbar-toggle{display:none;}
+		}
+		.navbar-nav{margin:7.5px -15px;}
+		.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px;}
+		@media (min-width:768px){
+		.navbar-nav{float:left;margin:0;}
+		.navbar-nav>li{float:left;}
+		.navbar-nav>li>a{padding-top:15px;padding-bottom:15px;}
+		}
+		.container:after,.container:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before{display:table;content:" ";}
+		.container:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after{clear:both;}
+		/*! CSS Used from: Embedded */
+		body{font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;padding-bottom:50px;}
+		.the-heading h1{font-weight:500;}
+		.page-header{text-align:left;}
+		#github{display:none;position:fixed;width:150px;height:150px;top:0;right:0;z-index:2000;}
+		@media (min-width:768px){
+		#github{display:block;}
+		}
+		.btn-outline-inverse{color:#fff;background-color:transparent;border-color:#fff;}
+		.btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active{color:#563d7c;text-shadow:none;background-color:#fff;border-color:#fff;}
+		.the-footer{padding-top:50px;padding-bottom:50px;margin-top:100px;color:#99979c;text-align:center;background-color:#2a2730;}
+		.the-footer a{color:#fff;}
+		@media (min-width: 768px){
+		.the-footer{text-align:left;}
+		.the-footer p{margin-bottom:0;}
+		}
+		.the-heading{position:relative;padding:30px 0;color:#cdbfe3;text-align:center;text-shadow:0 1px 0 rgba(0,0,0,.1);background-color:#90a4ae;}
+		.the-heading h1{font-weight:300;line-height:1;color:#fff;}
+		.the-heading .lead{margin:0 auto 30px;font-size:20px;color:#fff;}
+		.the-heading .btn{width:100%;padding:15px 30px;font-size:20px;}
+		@media (min-width: 480px){
+		.the-heading .btn{width:auto;}
+		}
+		@media (min-width: 768px){
+		.the-heading{padding:80px 0;}
+		.the-heading h1{font-size:60px;}
+		.the-heading .lead{font-size:24px;}
+		}
+		@media (min-width: 992px){
+		.the-heading .lead{width:80%;font-size:30px;}
+		}
+		.ios-like-list{display:inline-block;width:400px;}
+		.ios-like-list label{padding:10px;border-bottom:1px solid #f7f7f7;}
+
 	</style>
+
 </head>
 
 <body>
-	<h1>vt-toggle Demo</h1>
-	
-	<h2>Labels</h2>
-	<label class="vt-toggle">You can click me <input type="checkbox" class="vt-toggle"> </label>
-	<label class="vt-toggle">You can also click me <input type="checkbox" class="vt-toggle"> </label>
-	<label class="vt-toggle">I'm a label so all the native behavior is preserved <input type="checkbox" class="vt-toggle"> </label>
-	<label class="vt-toggle">I'm a label <input type="checkbox" class="vt-toggle"> </label>
+	<a href="https://github.com/Victornpb/vt-toggle" id="github">
+		<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
+	</a>
+	<header role="banner" class="navbar navbar-static-top bs-docs-nav">
+		<div class="container">
+			<div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#collapse" class="navbar-toggle">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+				<a href="https://github.com/Victornpb/vt-toggle/" class="navbar-brand">vt-Toggle</a></div>
+			<nav id="collapse" role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="https://github.com/victornpb/vt-switch/archive/master.zip" data-toggle="dropdown">Download</a></li>
+					<li><a href="https://github.com/Victornpb/vt-toggle/issues">Bug reports</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main id="content" role="main">
+		<div class="the-heading">
+			<div class="container">
+				<h1 class="title">vt-Toggle</h1>
+				<p class="lead">
+					Turn checkboxes &nbsp;<input type="checkbox" checked="checked"> into fancy toggle switches with pure CSS &nbsp;
+					<br>
+					<br>
+					
+					<!-- vt-toggle  -->
+					<input type="checkbox" checked="checked" class="vt-toggle lg" style="display:inline-block">
 
-	<hr> Uncheked
-	<input type="checkbox" class="vt-toggle xs">
-	<input type="checkbox" class="vt-toggle sm">
-	<input type="checkbox" class="vt-toggle">
-	<input type="checkbox" class="vt-toggle lg"> Checked
-	<input type="checkbox" class="vt-toggle xs" checked>
-	<input type="checkbox" class="vt-toggle sm" checked>
-	<input type="checkbox" class="vt-toggle" checked>
-	<input type="checkbox" class="vt-toggle lg" checked>
+					<p class="lead">
+						<a href="https://github.com/Victornpb/vt-toggle/archive/master.zip" class="btn btn-outline-inverse btn-lg">Download vt-Toggle</a>
+					</p>
+					<p class="github-stuff">
+						<iframe src="https://ghbtns.com/github-btn.html?user=Victornpb&amp;repo=vt-toggle&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="184" height="30"></iframe>
+						<iframe src="https://ghbtns.com/github-btn.html?user=Victornpb&amp;repo=vt-toggle&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="144" height="30"></iframe>
+					</p><br>
+					<!-- <p class="version">Currently v3.3.4 · Compatible with Bootstrap 2 and 3</p> -->
+			</div>
+		</div>
+		<div class="container" style="text-align:center;">
+			<h2 class="page-header">Getting Started</h2>
+			
+			<p>Bower</p>
+			<pre><code>bower install --save vt-toggle</code></pre>
+			<p>Include the CSS file</p>
+			<pre><code>&lt;link href="vt-toggle.css" rel="stylesheet"&gt;</code></pre>
+			<p>or import via SASS</p>
+			<pre><code>@import "vt-toggle.scss"</code></pre>
+			<p>Add your checkbox.</p>
+			<pre><code>&lt;input type="checkbox" class="vt-toggle" name="my-checkbox" checked&gt;</code></pre>
+			<p>Enjoy.</p>
+		</div>
 
-	<hr> Disabled Uncheked
-	<input type="checkbox" class="vt-toggle xs" disabled>
-	<input type="checkbox" class="vt-toggle sm" disabled>
-	<input type="checkbox" class="vt-toggle" disabled>
-	<input type="checkbox" class="vt-toggle lg" disabled> Disabled Checked
-	<input type="checkbox" class="vt-toggle xs" checked disabled>
-	<input type="checkbox" class="vt-toggle sm" checked disabled>
-	<input type="checkbox" class="vt-toggle" checked disabled>
-	<input type="checkbox" class="vt-toggle lg" checked disabled>
+		<div class="container">
+			<h2 class="page-header">Examples</h2>
+			
+			<h4>Labels</h4>
+			
+			<div class="ios-like-list">
+				<label class="vt-toggle">I'm a label <input type="checkbox" class="vt-toggle" checked> </label>
+				<label class="vt-toggle">You can click me <input type="checkbox" class="vt-toggle" checked> </label>
+				<label class="vt-toggle">You can also click me <input type="checkbox" class="vt-toggle"> </label>
+				<label class="vt-toggle">Please toggle me <input type="checkbox" class="vt-toggle"> </label>
+			</div>
+			
+			<h4> Uncheked </h4>
+			<hr>
+			<input type="checkbox" class="vt-toggle xs">
+			<input type="checkbox" class="vt-toggle sm">
+			<input type="checkbox" class="vt-toggle">
+			<input type="checkbox" class="vt-toggle lg"> Checked
+			<input type="checkbox" class="vt-toggle xs" checked>
+			<input type="checkbox" class="vt-toggle sm" checked>
+			<input type="checkbox" class="vt-toggle" checked>
+			<input type="checkbox" class="vt-toggle lg" checked>
 
-	<hr> Square
-	<input type="checkbox" class="vt-toggle square">
-	<input type="checkbox" class="vt-toggle square" checked> Custom everything
-	<input type="checkbox" class="vt-toggle custom">
-	<input type="checkbox" class="vt-toggle custom" checked>
+			<h4> Disabled Uncheked </h4>
+			<hr>
+			<input type="checkbox" class="vt-toggle xs" disabled>
+			<input type="checkbox" class="vt-toggle sm" disabled>
+			<input type="checkbox" class="vt-toggle" disabled>
+			<input type="checkbox" class="vt-toggle lg" disabled> Disabled Checked
+			<input type="checkbox" class="vt-toggle xs" checked disabled>
+			<input type="checkbox" class="vt-toggle sm" checked disabled>
+			<input type="checkbox" class="vt-toggle" checked disabled>
+			<input type="checkbox" class="vt-toggle lg" checked disabled>
 
-	<hr> Radio
-	<input type="radio" name="radio-group-1" class="vt-toggle" checked>
-	<input type="radio" name="radio-group-1" class="vt-toggle">
-	<input type="radio" name="radio-group-1" class="vt-toggle">
-	<input type="radio" name="radio-group-1" class="vt-toggle">
+			<h4> Square </h4>
+			<hr>
+			<input type="checkbox" class="vt-toggle square">
+			<input type="checkbox" class="vt-toggle square" checked> Custom everything
+			<input type="checkbox" class="vt-toggle custom">
+			<input type="checkbox" class="vt-toggle custom" checked>
 
+			<h4> Radio </h4>
+			<hr>
+			<input type="radio" name="radio-group-1" class="vt-toggle" checked>
+			<input type="radio" name="radio-group-1" class="vt-toggle">
+			<input type="radio" name="radio-group-1" class="vt-toggle">
+			<input type="radio" name="radio-group-1" class="vt-toggle">
+
+		</div>
+
+
+	</main>
+	<footer class="the-footer">
+		<div class="container">
+			<p>
+				Code licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, Version 2.0</a><br> Created by <a href="https://github.com/victornpb" target="_blank">Victor Nunes</a>
+			</p>
+		</div>
+	</footer>
+	<!--
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	-->
 </body>
+
 </html>
