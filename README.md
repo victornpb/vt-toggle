@@ -23,6 +23,10 @@ Into this fancy toggle just by addind the `vt-toggle` class
 
 Ok, cool! how can I get it?
 
+#### [NPM](https://www.npmjs.com/package/vt-toggle) 
+
+    npm install vt-toggle
+
 #### Bower
 
     bower install vt-toggle
