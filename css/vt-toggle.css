@@ -52,7 +52,6 @@
 /* Default classes */
 input.vt-toggle {
   position: relative;
-  display: block;
   -webkit-appearance: none;
   /* -moz-appearance: none; */
   appearance: none;
@@ -103,7 +102,6 @@ input.vt-toggle {
 
 input[type="checkbox"].vt-toggle.xs {
   position: relative;
-  display: block;
   -webkit-appearance: none;
   /* -moz-appearance: none; */
   appearance: none;
@@ -154,7 +152,6 @@ input[type="checkbox"].vt-toggle.xs {
 
 input[type="checkbox"].vt-toggle.sm {
   position: relative;
-  display: block;
   -webkit-appearance: none;
   /* -moz-appearance: none; */
   appearance: none;
@@ -205,7 +202,6 @@ input[type="checkbox"].vt-toggle.sm {
 
 input[type="checkbox"].vt-toggle.lg {
   position: relative;
-  display: block;
   -webkit-appearance: none;
   /* -moz-appearance: none; */
   appearance: none;
@@ -282,7 +278,6 @@ label.vt-toggle {
 
 input[type="checkbox"].vt-toggle.square {
   position: relative;
-  display: block;
   -webkit-appearance: none;
   /* -moz-appearance: none; */
   appearance: none;
@@ -333,7 +328,6 @@ input[type="checkbox"].vt-toggle.square {
 
 input[type="checkbox"].vt-toggle.long {
   position: relative;
-  display: block;
   -webkit-appearance: none;
   /* -moz-appearance: none; */
   appearance: none;
@@ -400,7 +394,6 @@ input[type="checkbox"].vt-toggle.long {
 
 input[type="checkbox"].vt-toggle.custom {
   position: relative;
-  display: block;
   -webkit-appearance: none;
   /* -moz-appearance: none; */
   appearance: none;
