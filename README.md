@@ -33,7 +33,7 @@ Ok, cool! how can I get it?
     
 #### CDN
 
-    -
+    https://unpkg.com/browse/vt-toggle@1.0.1/css/vt-toggle.css
     
 #### Download
 
@@ -41,39 +41,43 @@ Ok, cool! how can I get it?
 ### Importing into project
 
 #### Import using link
-
-    <link rel="stylesheet" type="text/css" href="bower_components/vt-toggle/css/vt-toggle.css">
-    
+```html
+<link rel="stylesheet" type="text/css" href="bower_components/vt-toggle/css/vt-toggle.css">
+<link rel="stylesheet" type="text/css" href="node_modules/vt-toggle/css/vt-toggle.css">
+```
 ##### Import using SASS
-    
-    @import "bower_components/vt-toggle/scss/vt-toggle";
-    
+```css
+@import "node_modules/vt-toggle/scss/vt-toggle"; // NPM
+@import "bower_components/vt-toggle/scss/vt-toggle"; // Bower
+```
 
 ### Creating your own classes using SASS
 
 You can create your own classes using the SASS mixin.
-
-    @mixin vt-toggle($toggleWidth, $toggleHeight, $handleMargin, $roundness, $on-color, $off-color, $label)
+```scss
+@mixin vt-toggle($toggleWidth, $toggleHeight, $handleMargin, $roundness, $on-color, $off-color, $label)
+```
 
 Example:
+```scss
+@import "bower_components/vt-toggle/scss/vt-toggle";
 
-    @import "bower_components/vt-toggle/scss/vt-toggle";
+$blue: #00f;
+$red: #f00;
 
-    $blue: #00f;
-    $red: #f00;
-
-    input.vt-toggle.blue {
-        @include vt-toggle(44px, 22px, 1px, 1, $blue, gray, false);
-    }
-    input.vt-toggle.red {
-        @include vt-toggle(44px, 22px, 1px, 1, $red, gray, false);
-    }
+input.vt-toggle.accent {
+    @include vt-toggle(44px, 22px, 1px, 1, $blue, gray, false);
+}
+input.vt-toggle.danger {
+    @include vt-toggle(44px, 22px, 1px, 1, $red, gray, false);
+}
+```
 
 Then you can use:
-   
-    <input type="checkbox" class="vt-toggle blue"> I'm blue toggle
-    <input type="checkbox" class="vt-toggle red"> I'm red toggle
-        
+```html
+<input type="checkbox" class="vt-toggle accent"> I'm blue toggle
+<input type="checkbox" class="vt-toggle danger"> I'm red toggle
+``` 
 ----
 
 # Default styles
