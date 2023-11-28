@@ -31,6 +31,6 @@
   },
   "homepage": "https://github.com/victornpb/vt-toggle#readme",
   "dependencies": {
-    "node-sass": "^6.0.1"
+    "node-sass": "^7.0.2"
   }
 }
